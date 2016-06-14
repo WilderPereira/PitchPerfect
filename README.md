@@ -1,2 +1,2 @@
 # PitchPerfect
-iOS Application done in Udacity - Intro to iOS Development
+iOS Application done in Udacity - Intro to iOS Development Course
