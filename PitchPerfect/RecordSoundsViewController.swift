@@ -67,9 +67,23 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     
     func audioRecorderDidFinishRecording(recorder: AVAudioRecorder, successfully flag: Bool) {
         if (flag){
+            //Identifier is like Android bundle
             self.performSegueWithIdentifier("stopRecording", sender: audioRecorder.url)
         }else{
             print("Recording Failed")
+        }
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        /*Checks if the identifier of the segue (where it is going) is the one we want
+        It seems like android intent and bundle
+         */
+        if (segue.identifier == "stopRecording") {
+            //Stores the next ViewController in playSoundsVC. Tells the next is PlaySoundViewController
+            let playSoundsVC = segue.destinationViewController as! PlaySoundViewController
+            let recordedAudioURL = sender as! NSURL
+            //Stores the recorded audio url directly in the viewcontroller variable
+            playSoundsVC.recordedAudioURL = recordedAudioURL
         }
     }
     

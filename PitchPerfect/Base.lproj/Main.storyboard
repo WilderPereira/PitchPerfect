@@ -76,10 +76,10 @@
             </objects>
             <point key="canvasLocation" x="1187" y="233"/>
         </scene>
-        <!--View Controller-->
+        <!--Play Sound View Controller-->
         <scene sceneID="mOE-W3-OtR">
             <objects>
-                <viewController id="Fpg-NS-nXZ" sceneMemberID="viewController">
+                <viewController id="Fpg-NS-nXZ" customClass="PlaySoundViewController" customModule="PitchPerfect" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="8Zy-Vg-tY3"/>
                         <viewControllerLayoutGuide type="bottom" id="mcI-Ay-qjY"/>
