@@ -18,6 +18,14 @@ class PlaySoundViewController: UIViewController {
     @IBOutlet weak var reverbButton:UIButton!
     @IBOutlet weak var echoButton:UIButton!
     @IBOutlet weak var chipmunkButton:UIButton!
+    
+    @IBAction func playSoundsForButton(sender:UIButton){
+        print("Effect button pressed")
+    }
+    
+    @IBAction func stopButtonPressed(sender:UIButton){
+        print("Stop Button Pressed")
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
