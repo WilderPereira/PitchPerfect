@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class PlaySoundViewController: UIViewController {
     
@@ -19,6 +20,14 @@ class PlaySoundViewController: UIViewController {
     @IBOutlet weak var echoButton:UIButton!
     @IBOutlet weak var chipmunkButton:UIButton!
     
+    var audioFile:AVAudioFile!
+    var audioEngine:AVAudioEngine!
+    var audioPlayerNode:AVAudioPlayerNode!
+    var stopTimer:NSTimer!
+    
+    enum ButtonType : Int { case Slow = 0, Fast, ChipMunk, Vader, Echo, Reverb, Snail, Rabbit }
+    
+    
     @IBAction func playSoundsForButton(sender:UIButton){
         print("Effect button pressed")
     }
@@ -29,6 +38,7 @@ class PlaySoundViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        //setupAudio()
 
         // Do any additional setup after loading the view.
     }
@@ -36,6 +46,10 @@ class PlaySoundViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        configureUI(.NotPlaying)
     }
     
 
